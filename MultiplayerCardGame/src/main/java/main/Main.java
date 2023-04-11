@@ -98,12 +98,14 @@ public class Main {
             List<Card> onlyNumberCards = drawPile.stream().filter(card -> (card.getRank() != 1 && card.getRank() != 11
                     && card.getRank() != 12 && card.getRank() != 13)).collect(Collectors.toList());
 
-            // Here, drawPile is a stack data structure which stores the remaining cards in
-            // the deck after the distribution of cards.
-            // onlyNumberCards is a list which is created by applying a filter to the
-            // drawPile stack. The filter is applied to exclude the action cards from the
-            // draw pile, so that only the number cards are left. The filtered list is then
-            // collected using the Collectors.toList() method.
+            /**
+             * Here, drawPile is a stack data structure which stores the remaining cards in
+             * the deck after the distribution of cards.
+             * onlyNumberCards is a list which is created by applying a filter to the
+             * drawPile stack. The filter is applied to exclude the action cards from the
+             * draw pile, so that only the number cards are left. The filtered list is then
+             * collected using the Collectors.toList() method.
+             */
 
             // Creating a discard pile
             Stack<Card> discardPile = new Stack<>();
