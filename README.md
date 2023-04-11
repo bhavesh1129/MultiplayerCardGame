@@ -1,8 +1,10 @@
 # Multiplayer Card Game
 
+## Overview
+
 This project involves designing a multiplayer card game that supports up to four players and different types of cards, including number cards and action cards. The game follows a set of rules that dictate how the players can play their cards and how the game is won. The aim of the game is to be the first player to run out of cards.
 
-# Game Rules
+## Game Rules
 
 1. Each player starts with a hand of 5 cards.
 2. The game starts with a deck of 52 cards (a standard deck of playing cards).
@@ -17,11 +19,20 @@ This project involves designing a multiplayer card game that supports up to four
 
 11. Actions are not stackable. For example, if a Queen is played by Player 1, and the next player draws two cards and misses a turn, they cannot play a Queen from their hand on that turn, even if one is available.
 
-# Winning the Game
+## Assumptions for Rank Values of Ace, Jack, Queen, and King
+
+In this implementation of the game, the following assumptions have been made:
+
+- Ace has a rank of 1
+- Jack has a rank of 11
+- Queen has a rank of 12
+- King has a rank of 13
+
+## Winning the Game
 
 The game ends when one player runs out of cards. That player is declared the winner.
 
-# Implementation Details
+## Implementation Details
 
 The game can be implemented using a variety of programming languages, data structures, and algorithms. A popular approach is to use object-oriented programming (OOP) and a deck class to represent the cards. Each player can have a hand class that holds their cards, and the game logic can be implemented using a game class. The game class can keep track of the state of the game, including the players, the deck, and the discard pile.
 <br/><br />
@@ -29,18 +40,18 @@ Additionally, a user interface can be created to display the game and allow play
 <br /><br />
 In conclusion, designing a multiplayer card game that supports multiple players and different types of cards is a fun and challenging project that involves implementing game logic and user interface design. By following the rules and implementation details outlined above, you can create an exciting game that will provide hours of entertainment for players of all skill levels.
 
-# How to Execute the Application
+## How to Execute the Application
 
-This readme explains how to execute the application to run a multiplayer card game. The game is developed using Java programming language and can be run using any Integrated Development Environment (IDE) such as Spring Tool Suite (STS), IntelliJ, Eclipse, etc. The application can be downloaded in a zip format from the provided link, and then it can be extracted to a directory of your choice. Once the extraction is complete, follow the steps below to run the application:
+This readme explains how to execute the application to run a multiplayer card game. The game is developed using Java programming language and can be run using any Integrated Development Environment (IDE) such as IntelliJ, Eclipse, etc. The application can be downloaded in a zip format from the provided link, and then it can be extracted to a directory of your choice. Once the extraction is complete, follow the steps below to run the application:
 
 1. Open your chosen IDE.
 2. Import the extracted file as a new project in your IDE.
 3. Locate the Main class in the main package.
 4. Run the Main class to start the application.
-   
+
 Note that no extra dependencies are required to run the application.
 
-# Kinds of Responses
+## Kinds of Responses
 
 After executing the application, you can expect one of two responses:
 
