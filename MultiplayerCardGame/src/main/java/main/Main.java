@@ -95,8 +95,11 @@ public class Main {
             drawPile.addAll(deck);
 
             // Filtering the draw pile to get only the number cards except the action cards
-            List<Card> onlyNumberCards = drawPile.stream().filter(card -> (card.getRank() != 1 && card.getRank() != 11
-                    && card.getRank() != 12 && card.getRank() != 13)).collect(Collectors.toList());
+            List<Card> onlyNumberCards = drawPile.stream().filter(card -> (card.getRank() != 1 &&
+                    card.getRank() != 11 &&
+                    card.getRank() != 12 &&
+                    card.getRank() != 13))
+                    .collect(Collectors.toList());
 
             /**
              * Here, drawPile is a stack data structure which stores the remaining cards in
