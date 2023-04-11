@@ -81,24 +81,103 @@ public class Main {
                 allPlayerHands.push(singlePlayerCards);
             }
         }
-        // Create the draw pile for the game
-        Stack<Card> drawPile = new Stack<>();
-
-        // Add all the undistributed cards to the draw pile
-        drawPile.addAll(deck);
-
-        // Filter the draw pile to get only the number cards except the action cards
-        List<Card> onlyNumberCards = drawPile.stream().filter(
-                card -> (card.getRank() != 1 &&
-                        card.getRank() != 11 &&
-                        card.getRank() != 12 &&
-                        card.getRank() != 13))
-                .collect(Collectors.toList());
-
-        // Create a discard pile
+        // Creating a discard pile
         Stack<Card> discardPile = new Stack<>();
 
-        // Add a number card from the draw pile to the discard pile to start the game
+        // Adding a number card from the draw pile to the discard pile to start the game
         discardPile.push(onlyNumberCards.get(onlyNumberCards.size() - 1));
-    }
-}
+
+        // Initializing a boolean variable to check if any cards are present
+        boolean noCardsPresent = false;
+
+        // Prompting the user to enter the starting player number
+        System.out.println("Which player do you want to start the game from?");
+        int startingPlayer = sc.nextInt();
+        System.out.println();
+
+        // Closing the Scanner class here
+        sc.close();
+
+        // Checking if the starting player number is valid
+        if (startingPlayer >= 1 && startingPlayer <= noOfPlayers) {
+            // Initializing the current player number to the starting player number
+            int currPlayer = startingPlayer - 1;
+            // Marking the first round to be 1
+            int round = 1;
+
+            // Loop will run till any one player runs out of cards
+            while (noCardsPresent == false) {
+                boolean isCardPresent = false;
+                // Displaying the suit and rank of the discard pile's top card for the current
+                // round
+                System.out.println("The suit and rank of the discard pile's top card are: "
+                        + discardPile.peek().getSuit() + " and " + discardPile.peek().getRank()
+                        + " respectively, for round " + (round++) + ".");
+
+                // Searching for the availability of the required type of card in the current
+                // player's hand
+                for (int i = 0; i < allPlayerHands.get(currPlayer).size(); i++) {
+                    if (allPlayerHands.get(currPlayer).get(i).getSuit().equals(discardPile.peek().getSuit())
+                            || (allPlayerHands.get(currPlayer).get(i).getRank() == discardPile.peek().getRank())) {
+                        // If the card is present, removing it from the player's hand and adding it to
+                        // the discard pile
+                        isCardPresent = true;
+                        discardPile.push(allPlayerHands.get(currPlayer).remove(i));
+                        currPlayer++;
+                        if (currPlayer == noOfPlayers) {
+                            currPlayer = 0;
+                        }
+                        break;
+                    }
+                }
+
+                // If the required type of card is not present in the current player's hand
+                if (isCardPresent == false) {
+                    if (!drawPile.isEmpty()) {
+                        // If there are cards in the draw pile, drawing a card from it
+                        Card drawedCard = drawPile.pop();
+                        if (drawedCard.getSuit().equals(discardPile.peek().getSuit())
+                                || drawedCard.getRank() == discardPile.peek().getRank()) {
+                            // If the drawn card can be added to the discard pile, adding it
+                            discardPile.push(drawedCard);
+                        } else {
+                            // If the drawn card cannot be added to the discard pile, adding it to the
+                            // current player's hand
+                            allPlayerHands.get(currPlayer).push(drawedCard);
+                        }
+
+                        currPlayer++;
+                        if (currPlayer == noOfPlayers) {
+                            currPlayer = 0;
+                        }
+                    }
+
+                    // If the draw pile is empty
+                    else {
+                        System.out.println("Draw pile became empty. Match stopped. No one is the winner...!!!");
+                        break;
+                    }
+                }
+            }
+                // If current player played all their cards and ran out of cards
+            if (allPlayerHands.get(currPlayer).isEmpty()) {
+            noCardsPresent = true;
+            System.out.println();
+            System.out.println("");
+            System.out.println("Number of rounds played: " + (--round));
+            System.out.println();
+            System.out.println("Player " + (currPlayer + 1) + " is the winner...!!!");
+            System.out.println("");
+            System.out.println();
+            }
+            // If the starting player entered by the user is not within the range of number of players
+            else {
+            System.out.println("Please select a player between 1 and " + noOfPlayers
+            + ", because you have only selected " + noOfPlayers + " players for this game.");
+            }
+            
+            // If the number of players entered by the user is not between 2 and 4
+            else {
+            System.out.println("Number of players cannot be less than 2 and more than 4.");
+            }
+        }
