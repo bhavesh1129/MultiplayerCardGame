@@ -32,14 +32,11 @@ In conclusion, designing a multiplayer card game that supports multiple players 
 # How to Execute the Application
 
 This readme explains how to execute the application to run a multiplayer card game. The game is developed using Java programming language and can be run using any Integrated Development Environment (IDE) such as Spring Tool Suite (STS), IntelliJ, Eclipse, etc. The application can be downloaded in a zip format from the provided link, and then it can be extracted to a directory of your choice. Once the extraction is complete, follow the steps below to run the application:
-<br/><br />
 
 1. Open your chosen IDE.
 2. Import the extracted file as a new project in your IDE.
 3. Locate the Main class in the main package.
 4. Run the Main class to start the application.
-
-<br/><br />
    
 Note that no extra dependencies are required to run the application.
 
@@ -49,7 +46,5 @@ After executing the application, you can expect one of two responses:
 
 1. Total Number of Rounds Played and Winner: If the game is played to completion without the draw pile becoming empty, the application will display the total number of rounds played and the winner. The response will look something like this: "No of rounds played: 22. Player 1 is the winner...!!!"
 2. No Winner Due to Empty Draw Pile: If the draw pile becomes empty during the game, the game ends in a draw, and no winner is declared. The response will look something like this: "Draw pile became empty. Match stopped. No one is the winner...!!!"
-
-<br/>
 
 In conclusion, by following the steps above, you can successfully execute the application and play the multiplayer card game. The application provides two kinds of responses depending on the outcome of the game, and it can be a fun way to spend your leisure time.
