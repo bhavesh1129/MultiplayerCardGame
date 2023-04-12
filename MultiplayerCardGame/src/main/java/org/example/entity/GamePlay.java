@@ -20,7 +20,8 @@ public class GamePlay {
 
     public void playGame() throws Exception {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter number of players max 4 and min 2");
+        System.out.println(
+                "Please input a number of players. The maximum number of players is 4, and the minimum number is 2.");
         int numOfPlayers = sc.nextInt();
 
         /*
@@ -86,14 +87,15 @@ public class GamePlay {
              * ended as a draw.
              */
             if (drawPile.size() < numCardsTake) {
-                System.out.println("Game drawn !! ... Cards are less ... !!!");
+                System.out.println(
+                        "The game has ended in a draw because there are not enough cards left to continue playing.");
                 break;
             }
 
             playerTurn %= numOfPlayers;
             if (playerTurn < 0)
-                playerTurn += numOfPlayers; 
-                // if playerturn goes to negative integers.
+                playerTurn += numOfPlayers;
+            // if playerturn goes to negative integers.
             playerTurn %= numOfPlayers;
 
             // current player will atleast have 1 card ... it is guarranteed
@@ -104,9 +106,10 @@ public class GamePlay {
              */
             boolean matched = false;
             int matchedNumber = -1;
-            Card topDiscardCard = discardPile.get(discardPile.size() - 1); 
-            // top card of the discard pile with whom the player will try to match his cards.
-            System.out.println("Discard deck top card = " + discardPile.get(discardPile.size() - 1));
+            Card topDiscardCard = discardPile.get(discardPile.size() - 1);
+            // top card of the discard pile with whom the player will try to match his
+            // cards.
+            System.out.println("Please discard the top card from the deck. = " + discardPile.get(discardPile.size() - 1));
 
             /*
              * matching mechanism of Set of Cards of
@@ -126,8 +129,8 @@ public class GamePlay {
 
                     if (topDiscardCard.getNumber() == 1 || topDiscardCard.getNumber() == 11
                             || topDiscardCard.getNumber() == 12 || topDiscardCard.getNumber() == 13) {
-                        if (currentPlayerCard.getNumber() == topDiscardCard.getNumber()) 
-                        // player cannot play same action card even if available so he will skip.
+                        if (currentPlayerCard.getNumber() == topDiscardCard.getNumber())
+                            // player cannot play same action card even if available so he will skip.
                             continue;
                     }
                     // if cards get matched then this statement will be printed.
@@ -193,7 +196,8 @@ public class GamePlay {
              */
             if (matched == true && players.get(playerTurn).getHand().size() == 0) {
 
-                System.out.println("Congratulations player " + players.get(playerTurn).getPlayerId() + " won the match !!!");
+                System.out.println(
+                        "Congratulations player " + players.get(playerTurn).getPlayerId() + " won the match !!!");
 
                 System.exit(0);
             }
