@@ -59,5 +59,27 @@ public class GamePlay {
         for (Card c : deck) {
             drawPile.add(c);
         }
+
+        // The game starts with the first player's turn
+        int currentPlayer = 0;
+        // Check if the drawPile is empty, the game ends with a draw
+        while (true) {
+            if (drawPile.size() == 0) {
+                System.out.println("Game Drawn !! ..... Cards Ended !!");
+                return;
+            }
+
+            // If a player has no cards left, he wins the game
+            currentPlayer %= numOfPlayers;
+            if (players.get(currentPlayer).giveCards().size() == 0) {
+                System.out
+                        .println("Player with player id : " + players.get(currentPlayer).giveId() + " won the match.");
+                return;
+            }
+
+            // Switch to the next player
+            currentPlayer += 1;
+        }
+
     }
 }
