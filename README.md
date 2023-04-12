@@ -42,14 +42,14 @@ In conclusion, designing a multiplayer card game that supports multiple players 
 
 ## How to Execute the Application
 
-This readme explains how to execute the application to run a multiplayer card game. The game is developed using Java programming language and can be run using any Integrated Development Environment (IDE) such as IntelliJ, Eclipse, etc. The application can be downloaded in a zip format from the provided link, and then it can be extracted to a directory of your choice. Once the extraction is complete, follow the steps below to run the application:
-
-1. Open your chosen IDE.
-2. Import the extracted file as a new project in your IDE.
-3. Locate the Main class in the main package.
-4. Run the Main class to start the application.
-
-Note that no extra dependencies are required to run the application.
+1. To run the application, extract the downloaded zip file to a directory of your choice or clone this repository on your local system.
+2. The application does not require any extra dependencies to run.
+3. Import the extracted file as a new project in your preferred IDE.
+4. Locate the Main class in the main package.
+5. Run the Main class to start the application.
+6. The game can be played with a minimum of 2 players and a maximum of 4 players.
+7. Input the desired number of players during the game's start.
+8. The application runs on any environment that supports Java 1.8 or above.
 
 ## Kinds of Responses
 
