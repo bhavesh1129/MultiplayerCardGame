@@ -72,7 +72,7 @@ public class Card {
      * @param s   a Suits enum representing the card suit
      *
      */
-    Card(int num, Suits s) {
+    public Card(int num, Suits s) {
         cardNumber = num;
         cardSuit = s;
     }

@@ -1,6 +1,6 @@
 import org.example.entity.Deck;
 import org.example.entity.Suits;
-import org.example.enums.Card;
+import org.example.entity.Card;
 import org.junit.Assert;
 import org.junit.Test;
 
