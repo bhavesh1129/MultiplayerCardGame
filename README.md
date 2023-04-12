@@ -50,12 +50,3 @@ In conclusion, designing a multiplayer card game that supports multiple players 
 6. The game can be played with a minimum of 2 players and a maximum of 4 players.
 7. Input the desired number of players during the game's start.
 8. The application runs on any environment that supports Java 1.8 or above.
-
-## Kinds of Responses
-
-After executing the application, you can expect one of two responses:
-
-1. Total Number of Rounds Played and Winner: If the game is played to completion without the draw pile becoming empty, the application will display the total number of rounds played and the winner. The response will look something like this: "No of rounds played: 22. Player 1 is the winner...!!!"
-2. No Winner Due to Empty Draw Pile: If the draw pile becomes empty during the game, the game ends in a draw, and no winner is declared. The response will look something like this: "Draw pile became empty. Match stopped. No one is the winner...!!!"
-
-In conclusion, by following the steps above, you can successfully execute the application and play the multiplayer card game. The application provides two kinds of responses depending on the outcome of the game, and it can be a fun way to spend your leisure time.
